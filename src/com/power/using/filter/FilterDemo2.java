@@ -9,7 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-public class FilterDemo1 implements Filter {
+public class FilterDemo2 implements Filter {
 
 	@Override
 	public void destroy() {
@@ -18,17 +18,16 @@ public class FilterDemo1 implements Filter {
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		System.out.println("拦截了");
+		System.out.println("FilterDemo2前");
 		chain.doFilter(request, response);
-		
+		System.out.println("FilterDemo2后");
 		
 	}
 
 	@Override
-	public void init(FilterConfig filterconfig) throws ServletException {
-		
-	
-	
+	public void init(FilterConfig filterConfig) throws ServletException {
 	}
+
+	
 
 }
