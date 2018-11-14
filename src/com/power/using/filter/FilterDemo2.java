@@ -19,7 +19,9 @@ public class FilterDemo2 implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		System.out.println("FilterDemo2前");
-		chain.doFilter(request, response);
+		//对请求进行拦截,写在放行前
+		chain.doFilter(request, response);//放行
+		//对响应进行拦截,写在放行后
 		System.out.println("FilterDemo2后");
 		
 	}
